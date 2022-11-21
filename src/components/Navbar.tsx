@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { IContext } from "../models/models";
+import { fireContext } from "..";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Navbar = () => {
-  const user = true;
+  const { auth } = useContext<IContext>(fireContext);
+  const [user] = useAuthState(auth as any);
+
   return (
     <div className="w-full bg-green-500 h-[60px] p-[5px] text-xl flex items-center">
       <div className="flex justify-end items-center mr-[50px] w-full">
