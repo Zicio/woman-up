@@ -9,12 +9,10 @@ const AppRouter = () => {
   const { auth } = useContext<IContext>(fireContext);
   const [user] = useAuthState(auth as any);
 
-  // useEffect(() => console.log(user), [user]);
-
   return user ? (
     <Routes>
       {privateRoutes.map(({ path, element: Element }) => (
-        <Route key={path} path={path + "*"} element={<Element />} />
+        <Route key={path} path={path} element={<Element />} />
       ))}
       ;
       <Route
@@ -25,7 +23,7 @@ const AppRouter = () => {
   ) : (
     <Routes>
       {publicRoutes.map(({ path, element: Element }) => (
-        <Route key={path} path={path + "*"} element={<Element />} />
+        <Route key={path} path={path} element={<Element />} />
       ))}
       <Route
         path="*"

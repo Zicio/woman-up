@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { fireContext } from ".";
 import AppRouter from "./AppRouter";
@@ -8,17 +9,19 @@ import { IContext } from "./models/models";
 
 const App = () => {
   const { auth } = useContext<IContext>(fireContext);
-  const [loading, error] = useAuthState(auth as any);
+  const [user, loading, error] = useAuthState(auth as any);
 
   if (loading) {
     return <Loader />;
   }
 
   return (
-    <div className="App">
-      <Navbar />
-      <AppRouter />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <AppRouter />
+      </div>
+    </BrowserRouter>
   );
 };
 

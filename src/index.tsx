@@ -2,7 +2,6 @@ import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
@@ -28,16 +27,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <fireContext.Provider
-        value={{
-          firebase,
-          auth,
-          firestore,
-        }}
-      >
-        <App />
-      </fireContext.Provider>
-    </BrowserRouter>
+    <fireContext.Provider
+      value={{
+        firebase,
+        auth,
+        firestore,
+      }}
+    >
+      <App />
+    </fireContext.Provider>
   </React.StrictMode>
 );
