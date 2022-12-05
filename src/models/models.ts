@@ -5,3 +5,10 @@ export interface IContext {
   auth: firebase.auth.Auth;
   firestore: firebase.firestore.Firestore;
 }
+
+export interface ITodo {
+  createdAt: Date;
+  description: string;
+  id: string;
+  title: string;
+}
