@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { fireContext } from ".";

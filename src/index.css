@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .button {
-  @apply rounded-md p-[5px] cursor-pointer text-white font-bold hover:shadow-md hover:shadow-gray-500 hover:bg-green-400;
+    @apply rounded-md p-[5px] cursor-pointer text-white font-bold hover:shadow-md hover:shadow-gray-500 hover:bg-green-400;
+}
+
+.box {
+    @apply p-[20px] border border-black rounded-md shadow-sm shadow-black
 }

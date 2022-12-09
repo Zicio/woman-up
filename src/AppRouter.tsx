@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { privateRoutes, publicRoutes } from "./routes";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { fireContext } from ".";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { IContext } from "./models/models";
 
 const AppRouter = () => {

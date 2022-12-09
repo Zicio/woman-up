@@ -6,6 +6,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { IContext } from "./models/models";
+import { DevSupport } from "@react-buddy/ide-toolbox";
+import { ComponentPreviews, useInitial } from "./dev";
 
 firebase.initializeApp({
   apiKey: "AIzaSyBSI2TiDkGDjl8sAuGwk_P1GLGsVA9DNRc",
@@ -34,7 +36,12 @@ root.render(
         firestore,
       }}
     >
-      <App />
+      <DevSupport
+        ComponentPreviews={ComponentPreviews}
+        useInitialHook={useInitial}
+      >
+        <App />
+      </DevSupport>
     </fireContext.Provider>
   </React.StrictMode>
 );
